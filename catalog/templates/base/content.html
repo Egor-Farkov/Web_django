@@ -1,0 +1,21 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skystore</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+</head>
+<body>
+{% include 'base/menu.html' %}
+<div class="container">
+    {% block title %} {% endblock %}
+  {% block content %} empty {% endblock %}
+  </div>
+{% include 'base/footer.html' %}
+
+<script type="text/javascript" src="{% static 'css/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
