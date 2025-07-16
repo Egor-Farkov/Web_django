@@ -11,7 +11,7 @@
 {% endblock %}
 {% block content %}
 <div class="row">
-{% for product in products %}
+{% for product in object_list %}
 <div class="col-3 mb-2" >
 <div class="card" style="width: 18rem;">
   <img src="{{ product.image|img_filter }}" class="card-img-top" alt="{{ product.name }}">
@@ -21,6 +21,8 @@
   </div>
    <div class="card-body">
     <a href="{% url 'catalog:detail_product' product.pk %}" class="card-link">Подробнее</a>
+    <a href="{% url 'catalog:update_product' product.pk %}" class="card-link">Обновить</a>
+    <a href="{% url 'catalog:delete_product' product.pk %}" class="card-link">Удалить</a>
     </div>
 </div>
 </div>
