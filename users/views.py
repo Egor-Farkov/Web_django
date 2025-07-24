@@ -24,7 +24,7 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserCreationView(CreateView):
     template_name = 'registration.html'
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy('main')
+    success_url = reverse_lazy('users:login')
 
 
     def form_valid(self, form):
