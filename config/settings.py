@@ -142,7 +142,7 @@ AUTH_USER_MODEL = "users.CustomUser"
 
 CONSTANT = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
 
-LOGIN_URL = "user:login"
+LOGIN_URL = "/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
