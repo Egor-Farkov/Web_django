@@ -1,0 +1,19 @@
+{% extends 'base/content.html' %}
+{% block title %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container text-center py-5">
+        <h3 class="font-weight-bold">Авторизация пользователя</h3>
+        <p class="lead my-4">Авторизация</p>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Войти</button>
+    <a href="{% url 'users:registration' %}" class="btn">Зарегистрироваться</a>
+    <a href="{% url 'catalog:home' %}" class="btn">Отменить</a>
+</form>
+{% endblock %}
