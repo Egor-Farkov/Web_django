@@ -18,7 +18,6 @@
   <div class="card-body">
     <h5 class="card-title">{{ product.name }}</h5>
     <p class="card-text">{{ product.description|truncatechars:100 }}</p>
-    <a class="card-text" href="{% url 'catalog:list_product_category' product.category.pk %}">{{ product.category }}</a>
   </div>
    <div class="card-body">
     <a href="{% url 'catalog:detail_product' product.pk %}" class="card-link">Подробнее</a>
