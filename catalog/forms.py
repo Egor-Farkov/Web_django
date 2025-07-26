@@ -9,7 +9,7 @@ from config.settings import CONSTANT
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        exclude = ["create_at", "updated_at"]
+        exclude = ["create_at", "updated_at", "owner"]
 
     def __init__(self, *args, **kwargs):
         super(ProductForm, self).__init__(*args, **kwargs)

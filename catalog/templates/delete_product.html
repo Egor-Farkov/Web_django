@@ -11,7 +11,9 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
+    {% if perms.catalog.can_delete_product %}
   <button type="submit">Удалить</button>
+    {% endif %}
   <a href="/" class="btn">Отменить</a>
 </form>
 {% endblock %}

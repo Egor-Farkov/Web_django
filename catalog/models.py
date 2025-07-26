@@ -1,5 +1,8 @@
 from django.db import models
 
+from users.models import CustomUser
+
+
 # Create your models here.
 
 class Category(models.Model):
@@ -27,6 +30,7 @@ class Product(models.Model):
     purchase_price = models.PositiveIntegerField(verbose_name='цена',null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, verbose_name='владелец', null=True, blank=True)
 
     def __str__(self):
         return f'{self.name}'
@@ -35,4 +39,6 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
         ordering = ['name']
+        permissions = [('can_unpublish_product', 'может отменять публикацию продукта'),
+                      ('can_delete_product', 'может удалять публикацию продукта')]
 
